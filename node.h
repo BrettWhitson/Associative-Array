@@ -4,15 +4,12 @@
 
 class node
 {
- private:
-  
-  node *left, *right;
+ public:
   std::string key;
   int data;
-
- public:
-
+  node *left, *right;
   node(std::string key);
+  
 };
 
 node::node(std::string key)
