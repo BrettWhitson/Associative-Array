@@ -1,0 +1,4 @@
+#ignore any binaries and Emacs backups
+exec
+*.o
+*~

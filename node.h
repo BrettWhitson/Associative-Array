@@ -11,5 +11,14 @@ class node
   int data;
 
  public:
+
   node(std::string key);
 };
+
+node(std::string key)
+{
+  this->key = key;
+  left = NULL;
+  right = NULL;
+  data = 0;
+}
