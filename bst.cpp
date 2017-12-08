@@ -25,17 +25,22 @@ void bst::insert(node* insert)
       if(insert-> key > temp-> key){
 	// if the node to the right is empty, stop looping. Otherwise continue on
 	if(temp->right == NULL)
-	  break;
+	  {
+	    temp->right = insert;
+	    break;
+	  }
 	temp = temp-> right;
       }
       else if(insert-> key < temp-> key){
 	// if the node to the left is empty, stop looping. Otherwise continue on
-	if(temp->left == NULL)
+	if(temp->left == NULL){
+	  temp->left = insert;
 	  break;
+	}
 	temp = temp-> left;
       }
     }// end while
-    
+    temp = NULL;
   }
 }
 
