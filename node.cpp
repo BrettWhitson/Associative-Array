@@ -2,7 +2,7 @@
 
 node::node(std::string key)
 {
-  this->key = hey;
+  this->key = key;
   left = NULL;
   right = NULL;
   data = 0;
