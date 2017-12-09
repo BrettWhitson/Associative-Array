@@ -64,7 +64,7 @@ void bst::min()
     while(temp->left != NULL){
       temp = temp->left;
     }
-    cout << "Minimum: " << temp->key << endl;
+    std::cout << "Minimum: " << temp->key << std::endl;
   }
 }
 
@@ -77,7 +77,7 @@ void bst::max()
     while(temp->right != NULL){
       temp = temp->right;
     }
-    cout << "Maximum: " << temp->key << endl;
+    std::cout << "Maximum: " << temp->key << std::endl;
   }
 }
 
