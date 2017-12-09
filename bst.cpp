@@ -47,12 +47,22 @@ void bst::insert(node* insert)
 
 int bst::find(std::string search)
 {
+  if(root){
+    node* temp;
+    temp = root;
   
+    while(temp->key != search && temp->){
+      
 }
 
-void bst::print()
+void bst::print(node* ptr)
 {
-    
+  if(!ptr){
+    return;
+  }
+  print(ptr->left);
+  std::cout << prt->key << ": " << ptr->data << std::endl;
+  print(ptr->right);
 }
 
 void bst::min()
@@ -91,7 +101,7 @@ void bst::remove(std::string remove)
   
 }
 
-void bst::operator[](int rhs)
+int bst::operator[](std::string rhs)
 {
   
 }
