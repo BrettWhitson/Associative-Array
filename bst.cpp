@@ -48,10 +48,21 @@ void bst::insert(node* insert)
   }
 }
 
-int bst::find(std::string search)
+void bst::find(std::string key)
 {
-      
+  find_key(root, key);
 }
+
+void bst::find_key(node* search, std::string key)
+{
+  if(!search)
+    return;
+  find_key(search->left, key);
+  if(search->key == key)
+    std::cout << search->key << ": " << search->data << std::endl;
+  find_key(search->right, key);
+}
+
 void bst::print()
 {
   print_inorder(root);
@@ -102,12 +113,30 @@ void bst::remove(std::string remove)
   
 }
 
-int bst::operator[](std::string rhs)
+int& bst::operator[](std::string rhs)
 {
+  int x = -1;
+  // if tree is empty
+  if(root == NULL)
+    return x;
   
-}
+  // if root is rhs
+  else if(root->key == rhs)
+    return root->data;
 
-node* bst::getRoot()
-{
-  return root;
+  // traverse
+  else{
+    node* temp = root;
+    while(temp && temp->key != rhs){
+      if(rhs > temp->key){
+	temp = temp->right;
+      }
+      else if(rhs < temp->key){
+	temp = temp->left;
+      }
+    }// end while
+    if(!temp)
+      return x;
+    return temp->data;
+  }
 }
