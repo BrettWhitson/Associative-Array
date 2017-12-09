@@ -1,19 +1,18 @@
 #ifndef BST_H
 #define BST_H
-#include "node.h"
-#include <string>
+#include "Node.h"
 
 class bst
 {
  private:
-  node* root;
+  Node* root;
   
  public:
   bst();
   ~bst();
-  void insert(node *insert);
+  void insert(Node *insert);
   int find(std::string search);
-  void print();
+  void print(Node* root);
   void min();
   void max();
   void save_file(std::string filename);
