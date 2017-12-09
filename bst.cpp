@@ -17,14 +17,14 @@ void bst::insert(node* insert)
   if(root == NULL){
     root = insert;
   }
-  // if at least one node
+  // if at least one Node
   else if(root != NULL){
-    // temporary search node starting at root
-    node* temp = root;
+    // temporary search Node starting at root
+    Node* temp = root;
     // while both left and right aren't empty, loop
     while(temp->left != NULL && temp->right != NULL){
       if(insert-> key > temp-> key){
-	// if the node to the right is empty, stop looping. Otherwise continue on
+	// if the Node to the right is empty, stop looping. Otherwise continue on
 	if(temp->right == NULL)
 	  {
 	    temp->right = insert;
@@ -33,7 +33,7 @@ void bst::insert(node* insert)
 	temp = temp-> right;
       }
       else if(insert-> key < temp-> key){
-	// if the node to the left is empty, stop looping. Otherwise continue on
+	// if the Node to the left is empty, stop looping. Otherwise continue on
 	if(temp->left == NULL){
 	  temp->left = insert;
 	  break;
