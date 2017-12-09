@@ -1,4 +1,5 @@
 #include "bst.h"
+#include <iostream>
 
 bst::bst()
 {
@@ -56,13 +57,28 @@ void bst::print()
 
 void bst::min()
 {
-  while(left != NULL){
-    
+  node* temp;
+  temp = root;
+  
+  if(root != NULL){
+    while(temp->left != NULL){
+      temp = temp->left;
+    }
+    cout << "Minimum: " << temp->key << endl;
+  }
 }
 
 void bst::max()
 {
+  node* temp;
+  temp = root;
   
+  if(root != NULL){
+    while(temp->right != NULL){
+      temp = temp->right;
+    }
+    cout << "Maximum: " << temp->key << endl;
+  }
 }
 
 void bst::save_file(std::string filename)
