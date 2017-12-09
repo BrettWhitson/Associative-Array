@@ -11,7 +11,7 @@ bst::~bst()
   
 }
 
-void bst::insert(Node* insert)
+void bst::insert(node* insert)
 {
   // if tree is empty
   if(root == NULL){
@@ -61,12 +61,28 @@ void bst::print(Node* _Node)
 
 void bst::min()
 {
+  node* temp;
+  temp = root;
   
+  if(root != NULL){
+    while(temp->left != NULL){
+      temp = temp->left;
+    }
+    std::cout << "Minimum: " << temp->key << std::endl;
+  }
 }
 
 void bst::max()
 {
+  node* temp;
+  temp = root;
   
+  if(root != NULL){
+    while(temp->right != NULL){
+      temp = temp->right;
+    }
+    std::cout << "Maximum: " << temp->key << std::endl;
+  }
 }
 
 void bst::save_file(std::string filename)
