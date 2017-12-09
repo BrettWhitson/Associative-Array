@@ -16,8 +16,8 @@ TARGET = exec
 
 all: $(TARGET)
 
-$(TARGET): main.o bst.o
-	$(CC) main.o bst.o -o $(TARGET)
+$(TARGET): main.o bst.o node.o
+	$(CC) main.o bst.o node.o -o $(TARGET)
 
 main.o: main.cpp bst.h
 	$(CC) $(CFLAGS) main.cpp

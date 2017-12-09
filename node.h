@@ -9,8 +9,6 @@ class node
   int data;
   node *left, *right;
   node(std::string key);
- private:
-  
 };
 
 #endif

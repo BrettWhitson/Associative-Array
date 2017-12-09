@@ -1,4 +1,5 @@
 #include "bst.h"
+#include "node.h"
 #include <iostream>
 
 bst::bst()
@@ -20,9 +21,9 @@ void bst::insert(node* insert)
   // if at least one Node
   else if(root != NULL){
     // temporary search Node starting at root
-    Node* temp = root;
+    node* temp = root;
     // while both left and right aren't empty, loop
-    while(temp->left != NULL && temp->right != NULL){
+    while(temp && temp->key != insert->key){
       if(insert-> key > temp-> key){
 	// if the Node to the right is empty, stop looping. Otherwise continue on
 	if(temp->right == NULL)
@@ -33,7 +34,7 @@ void bst::insert(node* insert)
 	temp = temp-> right;
       }
       else if(insert-> key < temp-> key){
-	// if the Node to the left is empty, stop looping. Otherwise continue on
+	// if the node to the left is empty, stop looping. Otherwise continue on
 	if(temp->left == NULL){
 	  temp->left = insert;
 	  break;
@@ -41,28 +42,28 @@ void bst::insert(node* insert)
 	temp = temp-> left;
       }
     }// end while
+    if(temp->key == insert->key)
+      temp->data++;
     temp = NULL;
   }
 }
 
 int bst::find(std::string search)
 {
-  if(root){
-    node* temp;
-    temp = root;
-  
-    while(temp->key != search && temp->){
       
 }
-
-void bst::print(node* ptr)
+void bst::print()
+{
+  print_inorder(root);
+}
+void bst::print_inorder(node* ptr)
 {
   if(!ptr){
     return;
   }
-  print(ptr->left);
-  std::cout << prt->key << ": " << ptr->data << std::endl;
-  print(ptr->right);
+  print_inorder(ptr->left);
+  std::cout << ptr->key << ": " << ptr->data << std::endl;
+  print_inorder(ptr->right);
 }
 
 void bst::min()
@@ -104,4 +105,9 @@ void bst::remove(std::string remove)
 int bst::operator[](std::string rhs)
 {
   
+}
+
+node* bst::getRoot()
+{
+  return root;
 }

@@ -12,12 +12,14 @@ class bst
   ~bst();
   void insert(node *insert);
   int find(std::string search);
-  void print(node* root);
+  void print();
+  void print_inorder(node* root);
   void min();
   void max();
   void save_file(std::string filename);
   void remove(std::string remove);
-  void operator[](int rhs);
+  int operator[](std::string rhs);
+  node* getRoot();
 };
 
 #endif
