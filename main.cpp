@@ -9,8 +9,6 @@ int main()
   cout << "Working as Intended!" << endl;
   bst test;
   node* testNode = new node("TestKey");
-  test.insert(testNode);
-
-  
+  test.insert(testNode);  
   return 0;
 }

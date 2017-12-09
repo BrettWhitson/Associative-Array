@@ -1,7 +1,6 @@
 #ifndef BST_H
 #define BST_H
 #include "node.h"
-#include <string>
 
 class bst
 {
@@ -13,7 +12,7 @@ class bst
   ~bst();
   void insert(node *insert);
   int find(std::string search);
-  void print();
+  void print(node* root);
   void min();
   void max();
   void save_file(std::string filename);
