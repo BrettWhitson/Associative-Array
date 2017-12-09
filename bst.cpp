@@ -56,7 +56,8 @@ void bst::print()
 
 void bst::min()
 {
-  
+  while(left != NULL){
+    
 }
 
 void bst::max()
