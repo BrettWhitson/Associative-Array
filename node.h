@@ -9,15 +9,8 @@ class node
   int data;
   node *left, *right;
   node(std::string key);
+ private:
   
 };
-
-node::node(std::string key)
-{
-  this->key = key;
-  left = NULL;
-  right = NULL;
-  data = 0;
-}
 
 #endif

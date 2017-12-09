@@ -23,5 +23,7 @@ main.o: main.cpp bst.h
 	$(CC) $(CFLAGS) main.cpp
 bst.o: bst.cpp bst.h
 	$(CC) $(CFLAGS) bst.cpp
+node.o: node.cpp
+	$(CC) $(CFLAGS) node.cpp
 clean:
 	rm *.o *~ $(TARGET)
