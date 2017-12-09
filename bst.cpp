@@ -9,7 +9,7 @@ bst::~bst()
 {
   
 }
-/*
+
 void bst::insert(node* insert)
 {
   // if tree is empty
@@ -43,7 +43,7 @@ void bst::insert(node* insert)
     temp = NULL;
   }
 }
-*/
+
 int bst::find(std::string search)
 {
   
